@@ -1,6 +1,4 @@
 from operator import add, sub
-from tkinter.tix import INTEGER
-
 
 def a_plus_abs_b(a, b):
     """Return a+abs(b), but without calling abs.
@@ -15,9 +13,9 @@ def a_plus_abs_b(a, b):
     3
     """
     if b < 0:
-        f = a-b
+        f = sub
     else:
-        f = a+b
+        f = add
     return f(a, b)
 
 
@@ -45,13 +43,15 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    a=max(i,j,k)
+   """orgininal version: a=max(i,j,k)
     n=min(i,j,k)
     for b in (i,j,k):
         while b<=a & b>=n:
             m=b
     f=mul(n,n)+mul(m,m)+0*a
-    return f(i,j,k)
+    return f(i,j,k)"""
+"""FIX"""
+    return i**2+j**2+k**2-max(i,j,k)**2
 
 
 def two_of_three_syntax_check():
@@ -75,7 +75,8 @@ def largest_factor(n):
     >>> largest_factor(13) # factor is 1 since 13 is prime
     1
     """
-   for i in range(n):
+    n=get.int()
+    for i in range(n):
         factor=[]
         while n%i == 0:
            factors.append(i)
